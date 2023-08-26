@@ -15,6 +15,7 @@ export default function Home({ menuData }) {
 export async function getStaticProps() {
   const menuQuery = '*[_type == "menu"]'
   const menuData = await client.fetch(menuQuery)
+  
   return {
     props: {
       menuData
