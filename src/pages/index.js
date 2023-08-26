@@ -1,36 +1,44 @@
 import { client } from "../../lib/client";
 import Contact from '../components/Contact'
-import { useRouter } from "next/router";
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Navbar from "@/components/Navbar";
 
 
 
-export default function Home({ menuData, contactData }) {
-  const { t } = useTranslation('common');
+export default function Home({  contactData, locale, menuData }) {
+const { t } = useTranslation();
 
-  console.log(menuData)
-  console.log(contactData)
   return (
 
     <div>
-      <h1 className="text-4xl font-bold text-center">{t('head')}</h1>
-      <Contact contactData={contactData} />
+      <Navbar menuData={menuData} locale={locale} />
+      <Contact contactData={contactData} locale={locale} />
     </div>
   )
 }
 
+
 export async function getStaticProps({ locale }) {
   try {
-    const menuQuery = '*[_type == "menu"]'
-    const contactQuery = '*[_type == "contact"]'
+    const menuQuery = `*[_type == "menu"] {
+      title,
+      "slug": slug.current,
+    }`
+    const contactQuery = `*[_type == "contact"]{
+      title,
+      subtitle,
+      description,
+      image,
+    }`
     const menuData = await client.fetch(menuQuery)
     const contactData = await client.fetch(contactQuery)
     return {
       props: {
         menuData,
         contactData,
-        ...(await serverSideTranslations(locale, ['common'])),
+        locale: locale,
+        ...(await serverSideTranslations(locale, [])),
       }
     }
   } catch (error) {
