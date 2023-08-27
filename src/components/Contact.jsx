@@ -5,24 +5,28 @@ import { urlFor } from "../../lib/client"
 export default function Contact ({contactData, locale}) {
     console.log(contactData)
     return (
-        <div>
-            <Container>
-                <div>
-                    {
-                        contactData.map((contactItem)=> {
+        <div className= "bg-gray-400">
+            <Container >
+               <div className= "flex flex-col justify-center items-center h-full space-y-12">
+               <div className= "text-left space-y-4">
+                    {contactData.map((contactItem) => {
                             const localizedTitle = contactItem.title?.find(item => item._key === locale)?.value;
-                            if (localizedTitle) {
-                                return (
-                                    <h2 key= {contactItem._id} >
-                                            {localizedTitle}
-                                    </h2> )
-                            } return null
+                            const localizeSubTitle = contactItem.subtitle.find(item => item._key === locale)?.value; 
+                            const localizeDescription = contactItem.description.find(item => item._key === locale)?.value;
+                            return (
+                                <div key={contactItem._id}>
+                                    {localizedTitle && <h2>{localizedTitle}</h2>}
+                                    {localizeSubTitle && <h3>{localizeSubTitle}</h3>}
+                                    {localizeDescription && <p>{localizeDescription}</p>}
+                                    
+                                </div>
+                            );
                         })
-
                     }
                 </div>
-                <p></p>
-                <div>
+                
+                <div className= "flex justify-between w-full max-w-4xl space-x-8">
+                    <div className= "flex-1">
                     <form action="#">
                     <div className='relative mb-2 h-[4rem]'>
             <label className=' uppercase  absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10'>Name</label>
@@ -57,8 +61,21 @@ export default function Contact ({contactData, locale}) {
             Contact me
         </button>
                     </form>
-                    
+                    </div>
+                    <div className= "flex-1">
+                    {contactData.map((contactItem) => {
+                        return (contactItem.image?.asset && (
+                            <Image 
+                                src={urlFor(contactItem.image.asset).url()} 
+                                alt={contactItem.image.alt || "Image"}
+                                width={400} 
+                                height={480}/>
+                            ))
+                        
+                    })} 
+                    </div>
                 </div>
+               </div>
             </Container>
         </div>
     )
