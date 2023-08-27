@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Container from './Container';
 import { useRouter } from 'next/router';
+import { CgMenuLeft } from 'react-icons/cg';
+import { TfiClose } from 'react-icons/tfi';
 
 
 export default function Navbar({menuData, locale}){
-console.log(locale)
-console.log(menuData)
+    const [isMenuOpen, setIsMenuOpen] = useState(false); 
 
     const router = useRouter(); 
     const { locales, locale: activeLocale } = router;
@@ -20,46 +21,72 @@ console.log(menuData)
     const sortedMenuData = [...menuData].sort((a, b) => {
         return predefinedOrder.indexOf(a.slug) - predefinedOrder.indexOf(b.slug);
     });
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
 
     return(
-        <div>
-            <Container>
-                <nav className='py-7 px-10 flex justify-between'>
-                    <Link href='/'>Some logo</Link>
-                    <ul className='flex gap-3'>
+        <div className='bg-hover shadow-custom sticky '>
+            <nav className='px-5 py-5'>
+                <Container>
+                    <div className='md:flex md:justify-between'>
+                        <div className='flex items-center justify-between'>
+                            <Link 
+                            href='/'
+                            className='font-title text-xl font-bold text-slate-600 hover:text-slate-500'
+                            >
+                                Some logo
+                            </Link>
+                            <div className='flex items-center'>
+                            {isMenuOpen ? (
+                            <TfiClose className="md:hidden cursor-pointer" onClick={toggleMenu} />
+                                ) : (
+                            <CgMenuLeft size={20} className="md:hidden cursor-pointer" onClick={toggleMenu} />
+                            )}
+                            </div>
+                        </div>
+                        <div className={`${isMenuOpen ? 'transform translate-x-0' : 'hidden'} md:flex h-screen md:h-10 transition-transform duration-300 pt-24 md:pt-0 flex flex-col md:flex-row gap-5 items-center font-title`}>
                         {sortedMenuData.map((menuItem) => {
-                            const localizedTitle = menuItem.title?.find(item => item._key === locale)?.value;
-                            if (localizedTitle) {
-                                return (
-                                    <li key={menuItem._id} className='cursor-pointer'>
-                                        <Link href={`/${menuItem.slug?.current}`}>
-                                            {localizedTitle}
-                                        </Link>
-                                    </li>
-                                );
-                            }
-                            return null; 
-                        })}
-                    </ul>
-
-                    <div>
-                        <span className='px-4 py-2 text-white rounded-lg bg-slate-600 uppercase text-sm'>{activeLocale} </span>
-                        {otherLocales.map((locale, localeIndex) => {
-                            const { pathname, query} = router;
+                        const localizedTitle = menuItem.title?.find(item => item._key === locale)?.value;
+                        if (localizedTitle) {
                             return (
+                            <li 
+                            key={menuItem._id} 
+                            className='cursor-pointer before-element'
+                            >
                                 <Link 
-                                    key={localeIndex} 
-                                    href={{ pathname, query }} 
-                                    locale={locale}
-                                    onClick={() => changeLocale(locale)}
-                                    className="active:bg-[#414052] cursor-pointer px-4 py-2 rounded-xl text-light uppercase text-sm transition-colors">
-                                        {locale}
+                                href={`/${menuItem.slug?.current}`}
+                                >
+                                {localizedTitle}
                                 </Link>
+                            </li>
                             );
-                        })}   
+                        }
+                            return null;
+                        })}
+                        <div className='flex pt-10 md:pt-0'>
+                            <span className='px-4 py-2 text-white rounded-lg bg-slate-600 uppercase text-sm cursor-pointer'>
+                                {activeLocale}
+                            </span>
+                            {otherLocales.map((locale, localeIndex) => {
+                                const { pathname, query } = router;
+                                return (
+                                <Link
+                                    key={localeIndex}
+                                    href={{ pathname, query }}
+                                    locale={locale}
+                                    onClick={() => document.cookie = `NEXT_LOCALE=${locale}`}
+                                    className="active:bg-[#414052] cursor-pointer px-4 py-2 rounded-xl text-dark uppercase text-sm transition-colors"
+                                >
+                                    {locale}
+                                </Link>
+                                );
+                            })}
+                        </div>
+                        </div>
                     </div>
-                </nav>
-            </Container>
+                </Container>
+            </nav>
         </div>
     )
 }
