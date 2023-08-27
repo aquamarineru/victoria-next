@@ -40,6 +40,12 @@
     .before-element:hover::before {
         width: 100%;
     }
+    input::placeholder,
+    textarea::placeholder {
+        color: #090909;
+        opacity: 0.5;
+        font-family: 'Raleway', sans-serif;
+    }
 }
 
 

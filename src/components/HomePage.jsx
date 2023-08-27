@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Button from './Button';
 
 export default function HomePage({ homeData, locale }) {
-    console.log(homeData, locale);
+
 
     return ( 
         <section className="h-screen bg-center bg-no-repeat bg-zinc-300 bg-cover relative flex items-center justify-center">
@@ -20,31 +20,48 @@ export default function HomePage({ homeData, locale }) {
                             key={homeItem._id}
                             src={urlFor(homeItem.bgImage).url()}
                             alt={homeItem.title}
-                            width={1000}
+                            width={800}
                             height={700}
+                            priority={true}
                             className='object-cover w-full h-full -z-10' 
                         />
                         ))
                     } 
                 </div> 
-                <div className='flex flex-col items-center justify-center'>
+                <div className='flex flex-col items-center justify-center '>
                     {
                         homeData.map((homeItem) => {
                             const localizedTitle = homeItem.title?.find(item => item._key === locale)?.value;
                             const localizedSubtitle = homeItem.subtitle?.find(item => item._key === locale)?.value;
+                            const localizedButton = homeItem.callToAction?.find(item => item._key === locale)?.value;
+                            const localizedBtn = homeItem.button?.find(item => item._key === locale)?.value;
                                 return (
                                     <>
-                                    <div className='z-10 bg-slate-500/40 px-10 py-16 rounded-md' key={homeItem._id}>
-                                        <h1 className='text-4xl font-title font-bold text-light uppercase'>{localizedTitle}</h1>
-                                        <h2 className='text-2xl font-title font-bold text-light uppercase'>{localizedSubtitle}</h2>
+                                    <div 
+                                    style={{backgroundColor: homeItem.bg.hex}}
+                                    className='flex flex-col justify-between gap-5 text-center z-10 opacity-70 px-4 py-6 md:px-10 md:py-16 rounded-md lg:w-[700px]' 
+                                    key={homeItem._id}
+                                    >
+                                        <h1 className='text-xl font-title font-bold text-light text-center uppercase md:text-3xl'>
+                                            {localizedTitle}
+                                        </h1>
+                                        <h2 className='text-base md:text-xl font-title font-medium text-light'>{localizedSubtitle}
+                                        </h2>
                                     </div>
-                                    <div className='z-10 flex items-center gap-5 mt-24'>
+                                    <div className='z-10 flex flex-col md:flex-row items-center gap-5 mt-24'>
                                         <Link href='#'>
-                                            <Button className="font-title hover:bg-hover">work with me</Button>
+                                            <Button
+                                            style={{backgroundColor: homeItem.bg.hex}}
+                                            className="font-title text-sm opacity-80">
+                                                {localizedButton}
+                                            </Button>
                                         </Link>
                                         <Link href='#'>
-                                            <Button className="inline-flex items-center justify-center gap-3 ">
-                                            <PiCalendarBlankThin  /> Book a meeting
+                                            <Button
+                                            style={{backgroundColor: homeItem.bg.hex}} 
+                                            className="inline-flex items-center justify-center gap-3 text-sm opacity-80">
+                                            <PiCalendarBlankThin  /> 
+                                            {localizedBtn}
                                             </Button>
                                         </Link>
 

@@ -33,6 +33,8 @@ export async function getStaticProps({ locale }) {
       subtitle,
       description,
       image,
+      bg,
+      button,
     }`
     const homeQuery = `*[_type == "home"]{
       seoTitle,
@@ -41,6 +43,7 @@ export async function getStaticProps({ locale }) {
       title,
       subtitle,
       bg,
+      button,
       bgImage,
       callToAction,
     }`
