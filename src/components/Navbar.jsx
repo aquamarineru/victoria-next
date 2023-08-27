@@ -26,8 +26,8 @@ export default function Navbar({menuData, locale}){
     };
 
     return(
-        <div className='bg-hover shadow-custom sticky '>
-            <nav className='px-5 py-5'>
+        <div className='shadow-custom'>
+            <nav className='px-5 py-5 fixed z-20 bg-hover w-full'>
                 <Container>
                     <div className='md:flex md:justify-between'>
                         <div className='flex items-center justify-between'>
