@@ -28,8 +28,9 @@ export default function Contact ({contactData, locale}) {
                 <div className= "flex justify-between w-full max-w-4xl space-x-8">
                     <div className= "flex-1">
                     <form action="#">
+
                     <div className='relative mb-2 h-[4rem]'>
-            <label className=' uppercase  absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10'>Name</label>
+            <label className=' uppercase  absolute top-[-.5rem] left-[1.25rem] p-[0.25rem]'>Name</label>
                 <input 
                 type="text" 
                 name="name" 
@@ -38,7 +39,7 @@ export default function Contact ({contactData, locale}) {
                 className="border-[1px]  rounded-md px-3 py-3 mt-2 w-full "/>
             </div>
             <div className='relative mb-2 h-[4rem]'>
-                <label className=' uppercase  absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10 '>Email</label>
+                <label className=' uppercase  absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] '>Email</label>
                 <input 
                     type="email" 
                     name="email"  
@@ -47,7 +48,7 @@ export default function Contact ({contactData, locale}) {
                     className="border-[1px] border-tomatoes rounded-md px-3 py-3 mt-2 w-full "/>
                 </div>
                 <div className='relative mb-2 h-[4rem]'>
-                <label className='uppercase absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] z-10 '>Message</label>
+                <label className='uppercase absolute top-[-.5rem] left-[1.25rem] p-[0.25rem] '>Message</label>
                     <textarea 
                     name='message' 
                     cols="30" 
@@ -60,6 +61,7 @@ export default function Contact ({contactData, locale}) {
                 <button type="submit" className="px-8 py-2 text-light border  rounded  uppercase mt-24">
             Contact me
         </button>
+
                     </form>
                     </div>
                     <div className= "flex-1">
@@ -74,6 +76,7 @@ export default function Contact ({contactData, locale}) {
                         
                     })} 
                     </div>
+
                 </div>
                </div>
             </Container>
