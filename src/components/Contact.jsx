@@ -3,7 +3,7 @@ import Image from "next/image"
 import { urlFor } from "../../lib/client"
 
 export default function Contact ({contactData, locale}) {
-    console.log(contactData)
+    //console.log(contactData)
     return (
         <div className= "bg-gray-400">
             <Container >
