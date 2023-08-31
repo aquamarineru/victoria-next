@@ -5,6 +5,7 @@ import Container from './Container';
 import { PiCalendarBlankThin } from 'react-icons/pi';
 import Link from 'next/link';
 import Button from './Button';
+import Title from './Title';
 
 export default function HomePage({ homeData = [], locale }) {
 
@@ -39,28 +40,28 @@ export default function HomePage({ homeData = [], locale }) {
                                     <>
                                     <div 
                                     style={{backgroundColor: homeItem.bg.hex}}
-                                    className='flex flex-col justify-between gap-5 text-center z-10 opacity-70 px-4 py-6 md:px-10 md:py-16 rounded-md lg:w-[700px]' 
+                                    className='flex flex-col justify-between gap-5 text-center text-light z-10 opacity-70 px-4 py-6 md:px-10 md:py-16 rounded-md lg:w-[700px]' 
                                     key={homeItem._id}
                                     >
-                                        <h1 className='text-xl font-title font-bold text-light text-center uppercase md:text-3xl'>
+                                        <h1 className='text-xl font-title font-bold text-light text-center uppercase md:text-4xl'>
                                             {localizedTitle}
                                         </h1>
-                                        <h2 className='text-base md:text-xl font-title font-medium text-light'>{localizedSubtitle}
-                                        </h2>
+                                        <Title type='small' >{localizedSubtitle}
+                                        </Title>
                                     </div>
-                                    <div className='z-10 flex flex-col md:flex-row items-center gap-5 mt-24'>
+                                    <div className='z-10 flex flex-col md:flex-row items-center gap-5 mt-24 '>
                                         <Link href='#'>
                                             <Button
-                                            style={{backgroundColor: homeItem.bg.hex}}
-                                            className="font-title text-sm opacity-80">
+                                            style={{backgroundColor: homeItem.bg.hex, borderColor: "transparent"}}
+                                            className=" hover:bg-slate-600 text-sm">
                                                 {localizedButton}
                                             </Button>
                                         </Link>
                                         <Link href='#'>
                                             <Button
-                                            style={{backgroundColor: homeItem.bg.hex}} 
-                                            className="inline-flex items-center justify-center gap-3 text-sm opacity-80">
-                                            <PiCalendarBlankThin  /> 
+                                            style={{backgroundColor: homeItem.bg.hex, borderColor: "transparent"}} 
+                                            className="inline-flex items-center justify-center gap-3 text-sm ">
+                                            <PiCalendarBlankThin size={20}  /> 
                                             {localizedBtn}
                                             </Button>
                                         </Link>

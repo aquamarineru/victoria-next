@@ -1,6 +1,12 @@
-export default function Title({ children }) {
-    return (
-        <h2 className='font-title font-bold text-4xl'>
+export default function Title({ children, type }) {
+    if(type === 'small') {
+        return (
+            <h3 className='text-base md:text-xl font-title font-bold'>
+                {children}
+            </h3>
+        )
+    } return (
+        <h2 className='font-title font-bold text-4xl title´'>
             {children}
         </h2>
     )

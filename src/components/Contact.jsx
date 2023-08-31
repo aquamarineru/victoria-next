@@ -2,6 +2,7 @@ import Container from "./Container"
 import Image from "next/image"
 import { urlFor } from "../../lib/client"
 import Button from "./Button";
+import Title from "./Title";
 
 export default function Contact({ contactData, locale }) {
     console.log(contactData);
@@ -20,8 +21,8 @@ export default function Contact({ contactData, locale }) {
                     className='h-screen w-full bg-center bg-no-repeat opacity-75 bg-zinc-300 bg-cover'>
                         <Container>
                             <div className= "flex items-center flex-col gap-5 py-16 text-dark text-center">
-                                <h2 className="font-title font-bold text-4xl ">{localizedTitle} </h2>
-                                <h3 className="text-xl font-title ">{localizeSubTitle}</h3>
+                                <Title type='medium' className="title" >{localizedTitle} </Title>
+                                <Title type='small'>{localizeSubTitle}</Title>
                                 <p className="font-text text-base md:text-lg xl:w-[700px] ">{localizeDescription}</p>
                             </div>
                             <div className="flex justify-around items-center pt-10">
@@ -67,7 +68,7 @@ export default function Contact({ contactData, locale }) {
                                 <Button
                                 type="submit"
                                 style={{ backgroundColor: contactItem.bg.hex, color: "#090909" }}
-                                className="font-title border-dark border-2 text-sm opacity-80 mt-24">
+                                className="mt-24">
                                     {localizedBtn}
                                 </Button>
 
