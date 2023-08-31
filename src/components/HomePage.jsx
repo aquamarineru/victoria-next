@@ -6,16 +6,16 @@ import { PiCalendarBlankThin } from 'react-icons/pi';
 import Link from 'next/link';
 import Button from './Button';
 
-export default function HomePage({ homeData, locale }) {
+export default function HomePage({ homeData = [], locale }) {
 
 
     return ( 
-        <section className="h-screen bg-center bg-no-repeat bg-zinc-300 bg-cover relative flex items-center justify-center">
+        <div className="">
             <Container className=''>
                 <div className='absolute top-0 left-0 right-0 bottom-0' >
                 <div className='absolute top-0 left-0 right-0 bottom-0 bg-light/20' />
                     {
-                    homeData.map((homeItem) => (
+                    Array.isArray(homeData) && homeData.map((homeItem) => (
                         <Image
                             key={homeItem._id}
                             src={urlFor(homeItem.bgImage).url()}
@@ -30,7 +30,7 @@ export default function HomePage({ homeData, locale }) {
                 </div> 
                 <div className='flex flex-col items-center justify-center '>
                     {
-                        homeData.map((homeItem) => {
+                        Array.isArray(homeData) && homeData.map((homeItem) => {
                             const localizedTitle = homeItem.title?.find(item => item._key === locale)?.value;
                             const localizedSubtitle = homeItem.subtitle?.find(item => item._key === locale)?.value;
                             const localizedButton = homeItem.callToAction?.find(item => item._key === locale)?.value;
@@ -81,6 +81,6 @@ export default function HomePage({ homeData, locale }) {
                 </div>
 
             </Container>
-        </section>
+        </div>
     )
 }

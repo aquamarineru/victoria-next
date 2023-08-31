@@ -1,13 +1,13 @@
 import Footer from './Footer';
 import Navbar from './Navbar';
 
-export default function Layout({ children, locale, menuData }) {
+export default function Layout({ children  }) {
     return (
         <div>
-            <main>
+            <main role="main">
                 {children}
             </main>
-            <footer>
+            <footer role="contentinfo">
                 <Footer />
             </footer>
         </div>

@@ -4,23 +4,28 @@ import Container from './Container';
 import { useRouter } from 'next/router';
 import { CgMenuLeft } from 'react-icons/cg';
 import { TfiClose } from 'react-icons/tfi';
+import { useTranslation } from 'next-i18next';
 
 
-export default function Navbar({menuData, locale}){
+export default function Navbar({menuData = [], locale}){
     const [isMenuOpen, setIsMenuOpen] = useState(false); 
 
+    const { t } = useTranslation('common');
+
     const router = useRouter(); 
+
     const { locales, locale: activeLocale } = router;
     const otherLocales = locales.filter((locale) => locale !== activeLocale);
+
     const changeLocale = (locale) => {
         document.cookie = `NEXT_LOCALE=${locale}`;
     };
-    const predefinedOrder = ['#about', '#services', 'blog', '#contact'];
-
-    // Sort the menuData based on the predefined order
-    const sortedMenuData = [...menuData].sort((a, b) => {
-        return predefinedOrder.indexOf(a.slug) - predefinedOrder.indexOf(b.slug);
-    });
+    const menuItems = [
+        { key: 'about', path: '/#about' },
+        { key: 'services', path: '/#services' },
+        { key: 'blog', path: '/blog' },
+        { key: 'contact', path: '/#contact' }
+    ];
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
@@ -46,24 +51,13 @@ export default function Navbar({menuData, locale}){
                             </div>
                         </div>
                         <div className={`${isMenuOpen ? 'transform translate-x-0' : 'hidden'} md:flex h-screen md:h-10 transition-transform duration-300 pt-24 md:pt-0 flex flex-col md:flex-row gap-5 items-center font-title`}>
-                        {sortedMenuData.map((menuItem) => {
-                        const localizedTitle = menuItem.title?.find(item => item._key === locale)?.value;
-                        if (localizedTitle) {
-                            return (
-                            <li 
-                            key={menuItem._id} 
-                            className='cursor-pointer before-element'
-                            >
-                                <Link 
-                                href={`/${menuItem.slug?.current}`}
-                                >
-                                {localizedTitle}
-                                </Link>
-                            </li>
-                            );
-                        }
-                            return null;
-                        })}
+                        {menuItems.map((item) => (
+                    <li key={item.key} className='cursor-pointer before-element'>
+                        <Link href={item.path}>
+                            {t(`menu.${item.key}`)}
+                        </Link>
+                    </li>
+                ))}
                         <div className='flex pt-10 md:pt-0'>
                             <span className='px-4 py-2 text-white rounded-lg bg-slate-600 uppercase text-sm cursor-pointer'>
                                 {activeLocale}

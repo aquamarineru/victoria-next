@@ -46,6 +46,12 @@
         opacity: 0.5;
         font-family: 'Raleway', sans-serif;
     }
+    .custom-translate {
+        transform: translate(calc(100% - 1.9rem), 0);
+    }
+    .custom-translate-negative {
+        transform: translate(calc(-100% + 1.9rem), 0);
+    }
 }
 
 

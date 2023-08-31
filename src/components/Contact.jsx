@@ -17,7 +17,7 @@ export default function Contact({ contactData, locale }) {
                 <section
                     key={contactItem._id}
                     style={{ backgroundColor: contactItem.bg.hex }}
-                    className='h-screen bg-center bg-no-repeat opacity-75 bg-zinc-300 bg-cover'>
+                    className='h-screen w-full bg-center bg-no-repeat opacity-75 bg-zinc-300 bg-cover'>
                         <Container>
                             <div className= "flex items-center flex-col gap-5 py-16 text-dark text-center">
                                 <h2 className="font-title font-bold text-4xl ">{localizedTitle} </h2>

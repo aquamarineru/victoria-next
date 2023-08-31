@@ -1,22 +1,29 @@
 import { client } from "../../lib/client";
 import Contact from '../components/Contact'
-import { useTranslation } from 'next-i18next';
+//import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Navbar from "@/components/Navbar";
 import HomePage from "@/components/HomePage";
+import About from "@/components/About";
+import Section from "@/components/Section";
+import BuyMeCoffee from "@/components/BuyMeCoffee";
+import Social from "@/components/Social";
 
 
-
-export default function Home({  contactData, locale, menuData, homeData }) {
-  console.log(homeData)
-const { t } = useTranslation();
-
+export default function Home({  contactData, locale, homeData }) {
   return (
 
     <div>
-      <Navbar menuData={menuData} locale={locale} />
-      <HomePage homeData={homeData} locale={locale} />
-      <Contact contactData={contactData} locale={locale} />
+      <Section>
+        <HomePage homeData={homeData} locale={locale} />
+        <Social />
+        <BuyMeCoffee />
+      </Section>
+      <Section>
+        <About />
+      </Section>
+      <Section>
+        <Contact contactData={contactData} locale={locale} />
+      </Section>
     </div>
   )
 }
@@ -24,10 +31,7 @@ const { t } = useTranslation();
 
 export async function getStaticProps({ locale }) {
   try {
-    const menuQuery = `*[_type == "menu"] {
-      title,
-      "slug": slug.current,
-    }`
+
     const contactQuery = `*[_type == "contact"]{
       title,
       subtitle,
@@ -48,22 +52,21 @@ export async function getStaticProps({ locale }) {
       callToAction,
     }`
 
-    const menuData = await client.fetch(menuQuery)
     const homeData = await client.fetch(homeQuery)
     const contactData = await client.fetch(contactQuery)
+    console.log(homeData)
     return {
       props: {
-        menuData,
         contactData,
-        locale: locale,
         homeData,
-        ...(await serverSideTranslations(locale, [])),
+        locale: locale,
+        ...(await serverSideTranslations(locale, ['common'])),
       }
     }
-  } catch (error) {
+  }catch (error) {
     console.log(error)
     return {
       props: {}
     }
-  }
+  } 
 }
