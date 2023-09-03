@@ -2,51 +2,213 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;900&family=Ysabeau+Office:wght@400;500;700&display=swap");
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;900&family=Ysabeau+Office:wght@400;500;700&display=swap');
-
-@layer base{
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    body {
-        display: flex;
-        flex-direction: column;
-    }
-    a{
-        text-decoration: none;
-        color: inherit;
-    }
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
-@layer components{
-    .before-element {
-        position: relative;
-        display: inline-block;
-    }
-      
-    .before-element::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 1px;
-        background: #090909;
-        transition: width 0.3s;
-    }
-      
-    .before-element:hover::before {
-        width: 100%;
-    }
-    input::placeholder,
-    textarea::placeholder {
+@layer components {
+  .before-element {
+    position: relative;
+    display: inline-block;
+  }
+
+  .before-element::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #090909;
+    transition: width 0.3s;
+  }
+
+  .before-element:hover::before {
+    width: 100%;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: #090909;
+    opacity: 0.5;
+    font-family: "Raleway", sans-serif;
+  }
+  .block-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    gap: 1rem;
+    padding: 1rem 0;
+    width: 800px;
+  }
+  .block-content img {
+    width: 50%;
+    height: auto;
+    shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 0.25rem;
+    margin: 0 auto;
+  }
+  .block-content h1 {
+    font-family: "Raleway", sans-serif;
+    font-size: rem;
+    font-weight: 900;
+    color: #090909;
+    text-align: center;
+  }
+  .block-content h2 {
+    font-family: "Raleway", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #090909;
+    text-align: center;
+  }
+  .block-content h3 {
+    font-family: "Raleway", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #090909;
+    text-align: center;
+  }
+  .block-content p {
+    font-family: "Ysabeau Office", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #090909;
+    display: flex;
+    flex-direction: column;
+    justify-content: between;
+    gap: 0.5rem;
+    line-height: 1.5rem;
+  }
+  .block-content a {
+    font-family: "Ysabeau Office", sans-serif;
+    color: #090909;
+    cursor: pointer;
+    text-decoration-line: underline;
+  }
+  .block-content a:hover {
+    color: blue;
+  }
+  .block-content ol {
+    font-family: "Ysabeau Office", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #090909;
+    text-align: start;
+    list-style-type: decimal;
+  }
+  .block-content ul {
+    font-family: "Ysabeau Office", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #090909;
+    text-align: start;
+    list-style-type: disc;
+ }
+  .block-content li {
+        margin-left: 1rem;
+ }
+  .block-content li::marker {
         color: #090909;
-        opacity: 0.5;
-        font-family: 'Raleway', sans-serif;
     }
+ .block-content blockquote {
+        font-family: "Ysabeau Office", sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #090909;
+        text-align: start;
+        border-left: 0.25rem solid #090909f0;
+        padding-left: 1rem;
+    }
+    .block-content blockquote p {
+        font-family: "Ysabeau Office", sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #090909;
+        text-align: start;
+        border-left: 0.25rem solid #090909f0;
+        padding-left: 1rem;
+    }
+    .about-content {
+      padding: 1rem 0;
+      margin: auto;
+    }
+    .about-content img {
+      width: 100%;
+      height: auto;
+      shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      border-radius: 0.25rem;
+      margin: 0 auto;
+    }
+  
+  .about-content p {
+
+   
     
+  }
+  .about-content ol {
+    font-family: "Ysabeau Office", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #090909;
+    text-align: start;
+    list-style-type: decimal;
+  }
+  .about-content ul {
+    font-family: "Ysabeau Office", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #090909;
+    text-align: start;
+    list-style-type: disc;
+ }
+  .about-content li {
+        margin-left: 1rem;
+ }
+  .about-content li::marker {
+        color: #090909;
+    }
+
 }
 
+@media (max-width: 768px) {
+  @layer components {
+    .block-content {
+      width: 100%;
+      padding: 0 2rem;
+    }
+    .block-content img {
+     
+    }
+  }
+}
 
+@media (max-width: 480px) {
+  @layer components {
+    .block-content img {
+      
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  @layer components {
+    .block-content img {
+     
+    }
+  }
+}

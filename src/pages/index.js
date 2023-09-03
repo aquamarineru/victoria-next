@@ -9,7 +9,7 @@ import BuyMeCoffee from "@/components/BuyMeCoffee";
 import Social from "@/components/Social";
 
 
-export default function Home({  contactData, locale, homeData }) {
+export default function Home({  contactData, locale, homeData, aboutData }) {
   return (
 
     <div>
@@ -18,12 +18,9 @@ export default function Home({  contactData, locale, homeData }) {
         <Social />
         <BuyMeCoffee />
       </Section>
-      <Section>
-        <About />
-      </Section>
-      <Section>
+        <About aboutData={aboutData} locale={locale} />
         <Contact contactData={contactData} locale={locale} />
-      </Section>
+
     </div>
   )
 }
@@ -51,14 +48,24 @@ export async function getStaticProps({ locale }) {
       bgImage,
       callToAction,
     }`
+    const aboutQuery = `*[_type == "about"]{
+      title,
+      description,
+      image,
+      bg,
+      button,
+      body,
+    }`
 
     const homeData = await client.fetch(homeQuery)
+    const aboutData = await client.fetch(aboutQuery)
     const contactData = await client.fetch(contactQuery)
-    console.log(homeData)
+
     return {
       props: {
         contactData,
         homeData,
+        aboutData,
         locale: locale,
         ...(await serverSideTranslations(locale, ['common'])),
       }

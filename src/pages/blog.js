@@ -1,15 +1,18 @@
 import React, { useState } from "react"
 import Container from "@/components/Container"
-import Title from "@/components/Title"
+import Link from "next/link"
 import PostGrid from "@/components/PostGrid"
 import Post from "@/components/Post"
 import { loadPosts } from './api/posts'
-import Button from "@/components/Button"
+import Breadcrumb from "@/components/Breadcrumb"
+import { PiArrowLeftLight} from 'react-icons/pi'
 
 const LOAD_MORE = 4
 
 export default function Blog({ initialPosts, total, locale  }) {
-    console.log(initialPosts)
+
+    const paths = ['Blog']
+
     const [ posts, setPosts ] = useState(initialPosts)
     const [ loadedAmount, setLoadedAmount ] = useState(LOAD_MORE)
     const [ loading, setLoading ] = useState(false)
@@ -31,8 +34,18 @@ export default function Blog({ initialPosts, total, locale  }) {
     }
 
     return (
-        <div className="bg-light ">
+        <div className="bg-light pt-24 md:pt-32">
             <Container>
+            <Breadcrumb paths={paths} />
+            <Link
+            href='/'
+            >
+                <button className="flex items-center gap-3 before-element">
+                <PiArrowLeftLight className="transition-all duration-400 ease-in-out hover:transform hover:translate-x-1 cursor-pointer" />
+                Back
+                </button>
+                
+            </Link>
             <PostGrid className="">
             {posts.map((post) => (
                 <Post 

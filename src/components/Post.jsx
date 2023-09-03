@@ -6,12 +6,12 @@ import Button from "./Button";
 import { PiArrowRight } from "react-icons/pi";
 
 export default function Post({ title, image, slug, description, tags, locale }) {
-    console.log(title)
+console.log(tags)
     const localizedTitle = title.find(item => item._key === locale).value;
     const localizedDescription = description.find(item => item._key === locale).value;
-    console.log(localizedTitle.value)
+
     return(
-        <Link href={`/blog/${slug.current}`} 
+        <Link href={`/blog/${encodeURIComponent(slug.current)}`} 
         className="text-dark border-hover bg-slate-100 p-4 rounded-md">
             <div className=" flex flex-col gap-3 relative">
                 <div className="hidden md:block">
@@ -31,6 +31,7 @@ export default function Post({ title, image, slug, description, tags, locale }) 
             className="mb-7 text-center">{localizedTitle}</Title>
             <ul>
                 {tags && tags.map((tagRef) => (
+                    console.log(tagRef),
                     <li
                     className="inline-block bg-slate-200 text-slate-800 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2 uppercase"
                     key={tagRef._ref}>

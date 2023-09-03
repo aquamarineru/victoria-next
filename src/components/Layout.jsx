@@ -3,8 +3,8 @@ import Navbar from './Navbar';
 
 export default function Layout({ children  }) {
     return (
-        <div>
-            <main role="main">
+        <div className="flex flex-col min-h-screen">
+            <main role="main" className="flex-grow">
                 {children}
             </main>
             <footer role="contentinfo">

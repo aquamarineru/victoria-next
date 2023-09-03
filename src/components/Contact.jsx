@@ -5,7 +5,6 @@ import Button from "./Button";
 import Title from "./Title";
 
 export default function Contact({ contactData, locale }) {
-    console.log(contactData);
 
     return (
         <>
@@ -15,10 +14,10 @@ export default function Contact({ contactData, locale }) {
             const localizeDescription = contactItem.description.find(item => item._key === locale)?.value;
             const localizedBtn = contactItem.button?.find(item => item._key === locale)?.value;
             return(    
-                <section
+                <div
                     key={contactItem._id}
                     style={{ backgroundColor: contactItem.bg.hex }}
-                    className='h-screen w-full bg-center bg-no-repeat opacity-75 bg-zinc-300 bg-cover'>
+                    className='h-full py-10 w-full bg-center bg-no-repeat opacity-75 bg-zinc-300 bg-cover'>
                         <Container>
                             <div className= "flex items-center flex-col gap-5 py-16 text-dark text-center">
                                 <Title type='medium' className="title" >{localizedTitle} </Title>
@@ -82,7 +81,7 @@ export default function Contact({ contactData, locale }) {
                                 />
                             </div>
                         </Container>
-                </section>
+                </div>
             )})}
         </>
     );

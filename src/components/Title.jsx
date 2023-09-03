@@ -6,7 +6,7 @@ export default function Title({ children, type }) {
             </h3>
         )
     } return (
-        <h2 className='font-title font-bold text-4xl title´'>
+        <h2 className='font-title font-bold text-2xl md:text-3xl xl:text-4xl title´'>
             {children}
         </h2>
     )
