@@ -30,7 +30,7 @@ export default function AboutPage({ aboutData, locale, }) {
                         </Link>
                         <Title >{localizedTitle}</Title>
 
-                        <div className="flex flex-col items-center md:flex-row md:items-start justify-between gap-10">
+                        <div className="flex flex-col items-center lg:flex-row lg:items-start justify-between gap-10">
                             <Image
                                     src={urlFor(aboutItem.myImage).crop('center').fit('crop').width(1000).height(1080).url()} 
                                     alt={aboutItem.title}
@@ -61,7 +61,7 @@ export default function AboutPage({ aboutData, locale, }) {
                                                 />
                                             </div>
                                         }
-                                        <div className="w-[500px] ">
+                                        <div className=" px-4 w-[300px] md:w-[500px] ">
                                         <h3 className="text-xl font-bold">{publication.title}</h3>
                                         <p className="mt-2">{publication.description}</p>
                                         
