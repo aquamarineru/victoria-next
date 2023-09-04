@@ -8,7 +8,6 @@ import Title from "@/components/Title"
 
 import Link from "next/link"
 import { PiArrowLeftLight} from 'react-icons/pi'
-import Publication from "@/components/Publication"
 
 export default function AboutPage({ aboutData, locale, }) {
     console.log(aboutData)
@@ -19,7 +18,7 @@ export default function AboutPage({ aboutData, locale, }) {
             const localizedTitle = aboutItem.title?.find(item => item._key === locale)?.value;
 
             return (
-                <div className="pt-24 md:pt-32 h-full text-center" key={aboutItem._id} style={{ backgroundColor: aboutItem.bg.hex }} >
+                <div className="pt-24 md:pt-36 h-full text-center" key={aboutItem._id} style={{ backgroundColor: aboutItem.bg.hex }} >
                     <Container>
                         <Breadcrumb paths={paths} />
                         <Link href='/'>
@@ -51,7 +50,7 @@ export default function AboutPage({ aboutData, locale, }) {
                                     key={index} 
                                     className="mb-4 flex flex-col gap-5 md:flex-row items-center justify-center">
                                         {publication.image && 
-                                            <div className="mt-3">
+                                            <div className="mt-3 hidden md:block">
                                                 <Image 
                                                     src={urlFor(publication.image).crop('center').fit('crop').width(1000).height(1080).url()} 
                                                     alt={publication.title || "Publication Image"} 

@@ -191,24 +191,14 @@
       width: 100%;
       padding: 0 2rem;
     }
-    .block-content img {
-     
-    }
   }
 }
 
-@media (max-width: 480px) {
-  @layer components {
-    .block-content img {
-      
-    }
-  }
-}
 
 @media (max-width: 320px) {
   @layer components {
     .block-content img {
-     
+      width: 100%;
     }
   }
 }

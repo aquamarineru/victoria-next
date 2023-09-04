@@ -112,7 +112,7 @@ export default function RelatedPosts({ post, relatedPosts, locale }) {
                         />
                       </div>
                     )}
-                    <h3 className='font-bold text-center'>{localizedTitle && localizedTitle.value}</h3> 
+                    <h3 className='mt-3 font-bold text-center'>{localizedTitle && localizedTitle.value}</h3> 
                   </Link>
                 </li>
               );

@@ -15,8 +15,7 @@ export default function Home({  contactData, locale, homeData, aboutData }) {
     <div>
       <Section>
         <HomePage homeData={homeData} locale={locale} />
-        <Social />
-        <BuyMeCoffee />
+
       </Section>
         <About aboutData={aboutData} locale={locale} />
         <Contact contactData={contactData} locale={locale} />

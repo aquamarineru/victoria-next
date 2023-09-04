@@ -34,7 +34,7 @@ export default function Blog({ initialPosts, total, locale  }) {
     }
 
     return (
-        <div className="bg-light pt-24 md:pt-32">
+        <div className="bg-light pt-24 md:pt-36">
             <Container>
             <Breadcrumb paths={paths} />
             <Link

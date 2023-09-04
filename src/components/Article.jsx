@@ -2,7 +2,7 @@ import Link from "next/link"
 import { PiArrowLeftLight} from 'react-icons/pi'
 export default function Article({ children, backUrl }){
     return (
-        <article className="pt-24 md:pt-32">
+        <article className="pt-24 md:pt-36">
             <Link
             href={backUrl}
             >

@@ -15,7 +15,7 @@ export default function BodyPost({ post, locale }) {
         <>
             <Breadcrumb paths={paths}/>
             <Article backUrl='/blog'>
-                <Title className=''>{localizedTitle && localizedTitle.value}</Title>
+                <Title>{localizedTitle && localizedTitle.value}</Title>
                 <div className="grid grid-cols-2 gap-10 py-4 text-sm">
                     <div className="flex flex-col items-center"> 
                         <p className="mb-2 font-title font-bold ">Published on: </p>

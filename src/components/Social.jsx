@@ -36,11 +36,11 @@ const socialItems = [
 export default function Social() {
     return (
         <ScreenEgg className='z-10' type="left">
-            <ul className='flex gap-4 justify-center md:mb-0 md:inline-block'> 
+            <ul className='flex gap-4 justify-center md:mb-0 md:inline-block px-4 md:px-5'> 
             {socialItems.map((item) => (
                 <li 
                 key={item.id} 
-                className='mb-3 text-light hover:text-hover'>
+                className='mb-3 text-light  hover:text-hover'>
                     <Link 
                     href={item.href}
                     target= '_blank'
