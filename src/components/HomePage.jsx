@@ -12,9 +12,9 @@ export default function HomePage({ homeData = [], locale }) {
 
     return ( 
         <div className="">
-            <Container className=''>
+            <Container>
                 <div className='absolute top-0 left-0 right-0 bottom-0' >
-                <div className='absolute top-0 left-0 right-0 bottom-0 bg-light/20' />
+                <div className='absolute top-0 left-0 right-0 bottom-0 bg-light/10' />
                     {
                     Array.isArray(homeData) && homeData.map((homeItem) => (
                         <Image
@@ -39,34 +39,33 @@ export default function HomePage({ homeData = [], locale }) {
                                 return (
                                     <>
                                     <div 
-                                    style={{backgroundColor: homeItem.bg.hex}}
-                                    className='flex flex-col justify-between gap-5 text-center text-light z-10 opacity-70 px-4 py-6 md:px-10 md:py-16 rounded-md lg:w-[700px]' 
+                                    style={{backgroundColor: homeItem.bg.hex, opacity: 0.8}}
+                                    className='flex flex-col justify-between items-center gap-5 text-center text-dark z-10 px-4 py-6 md:px-10 md:py-16 rounded-md lg:w-[700px]' 
                                     key={homeItem._id}
                                     >
-                                        <h1 className='text-xl font-title font-bold text-light text-center uppercase md:text-4xl'>
+                                        <h1 className='text-xl font-title font-bold text-dark text-center uppercase md:text-4xl'>
                                             {localizedTitle}
                                         </h1>
-                                        <Title type='small' >{localizedSubtitle}
-                                        </Title>
-                                    </div>
-                                    <div className='z-10 flex flex-col md:flex-row items-center gap-5 mt-24 '>
+                                        <p className=''>{localizedSubtitle}
+                                        </p>
+                                        <div className='z-10 flex flex-col md:flex-row items-center gap-5 mt-10'>
                                         <Link href='#'>
                                             <Button
-                                            style={{backgroundColor: homeItem.bg.hex, borderColor: "transparent"}}
-                                            className=" hover:bg-slate-600 text-sm">
+                                            className=" hover:bg-slate-600 text-sm hover:text-light">
                                                 {localizedButton}
                                             </Button>
                                         </Link>
                                         <Link href='#'>
                                             <Button
-                                            style={{backgroundColor: homeItem.bg.hex, borderColor: "transparent"}} 
-                                            className="inline-flex items-center justify-center gap-3 text-sm ">
+                                            className="inline-flex items-center justify-center gap-3 text-sm hover:bg-slate-600 hover:text-light">
                                             <PiCalendarBlankThin size={20}  /> 
                                             {localizedBtn}
                                             </Button>
                                         </Link>
 
                                     </div>
+                                    </div>
+                                    
 
                                     
                                     

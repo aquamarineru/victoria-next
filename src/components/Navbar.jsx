@@ -31,7 +31,7 @@ export default function Navbar({menuData = [], locale}){
 
     return(
         <div className='shadow-custom'>
-            <nav className='px-5 py-5 fixed z-20 bg-hover w-full'>
+            <nav className='px-5 py-5 fixed z-20 bg-light w-full'>
                 <Container>
                     <div className='md:flex md:justify-between'>
                         <div className='flex items-center justify-between'>
@@ -52,13 +52,13 @@ export default function Navbar({menuData = [], locale}){
                         <div className={`${isMenuOpen ? 'transform translate-x-0' : 'hidden'} md:flex h-screen md:h-10 transition-transform duration-300 pt-24 md:pt-0 flex flex-col md:flex-row gap-5 items-center font-title`}>
                         {links.map(({ path, key }, index) => (
                                     <Link href={path} key={index}
-                                        className='text-dark before-element font-plex uppercase cursor-pointer transition-colors hover:text-blue-500 '>
+                                        className='text-dark before-element font-plex uppercase cursor-pointer transition-colors '>
                                             {key}
                                     
                                     </Link>
                                 ))}
                         <div className='flex pt-10 md:pt-0'>
-                            <span className='px-4 py-2 text-white rounded-lg bg-slate-600 uppercase text-sm cursor-pointer'>
+                            <span className='px-4 py-2 text-white rounded-lg bg-dark/60 uppercase text-sm cursor-pointer'>
                                 {activeLocale}
                             </span>
                             {otherLocales.map((locale, localeIndex) => {
@@ -69,7 +69,7 @@ export default function Navbar({menuData = [], locale}){
                                     href={{ pathname, query }}
                                     locale={locale}
                                     onClick={() => document.cookie = `NEXT_LOCALE=${locale}`}
-                                    className="active:bg-[#414052] cursor-pointer px-4 py-2 rounded-xl text-dark uppercase text-sm transition-colors"
+                                    className="active:bg-dark/60 cursor-pointer px-4 py-2 rounded-xl text-dark uppercase text-sm transition-colors"
                                 >
                                     {locale}
                                 </Link>
