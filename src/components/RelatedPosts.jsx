@@ -88,7 +88,7 @@ export default function RelatedPosts({ post, relatedPosts, locale }) {
         <div className="py-10">
       {filteredRelatedPosts && filteredRelatedPosts.length > 0 && (
         <div className=''>
-          <h2 className='text-xl font-semibold mb-4'>
+          <h2 className='text-xl font-title font-semibold mb-4'>
             This posts can be interesting for you:
           </h2>
           <Slider {...settings}> 

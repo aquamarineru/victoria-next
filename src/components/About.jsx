@@ -10,7 +10,7 @@ export default function About({ aboutData, locale }) {
     console.log("Received locale:", locale);
 
     return(
-        <div className="w-full h-full">
+        <div id="about" className="w-full h-full">
             {
                 Array.isArray(aboutData) && aboutData.map((aboutItem) => {
                     const localizedTitle = aboutItem.title?.find(item => item._key === locale)?.value;
@@ -30,7 +30,7 @@ export default function About({ aboutData, locale }) {
                                             {localizedSubtitle}
                                         </p>
                                         <Link href='/about'>
-                                            <Button style={{ color: "#090909" }}>
+                                            <Button className="inline-flex items-center justify-center gap-3 text-sm hover:bg-dark/70 hover:text-light">
                                                 {localizedButton}
                                             </Button>
                                             

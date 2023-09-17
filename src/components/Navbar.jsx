@@ -20,8 +20,8 @@ export default function Navbar({menuData = [], locale}){
         document.cookie = `NEXT_LOCALE=${locale}`;
     }; 
     const links = [
-        { key: 'about', path: '/#about' },
-        { key: 'services', path: '/#services' },
+        { key: 'about', path: '/about' },
+        { key: 'services', path: '/services' },
         { key: 'blog', path: '/blog' },
         { key: 'contact', path: '/#contact' }
     ];
@@ -31,7 +31,7 @@ export default function Navbar({menuData = [], locale}){
 
     return(
         <div className='shadow-custom'>
-            <nav className='px-5 py-5 fixed z-20 bg-light w-full'>
+            <nav className='px-5 py-5 fixed z-20 bg-light md:bg-light/90 w-full'>
                 <Container>
                     <div className='md:flex md:justify-between'>
                         <div className='flex items-center justify-between'>

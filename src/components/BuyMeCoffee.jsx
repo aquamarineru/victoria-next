@@ -1,5 +1,6 @@
 import ScreenEgg from './ScreenEgg';
 import Link from 'next/link';
+import Button from './Button';
 import { GiCoffeeCup } from 'react-icons/gi';
 export default function BuyMeCoffee() {
     return (
@@ -9,9 +10,11 @@ export default function BuyMeCoffee() {
             <Link 
             href="#"
             target='_blank'
-            className='bg-slate-700 text-light hover:bg-hover hover:text-dark font-title text-base text-center px-6 py-4 rounded-md flex flex-col items-center justify-center gap-2 '
+            className=''
             rel='noopener' >
-                Buy me a coffee...
+                <Button className="inline-flex items-center bg-light justify-center gap-3 text-sm hover:bg-dark/50 hover:text-light">
+                    Buy me a coffee...
+                </Button>
             </Link>
         </div>
         </ScreenEgg>

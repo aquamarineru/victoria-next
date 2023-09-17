@@ -44,7 +44,7 @@ export default function Social() {
                     <Link 
                     href={item.href}
                     target= '_blank'
-                    className='transition-transform hover:opacity-60 '>
+                    className='transition-transform text-light hover:opacity-60 '>
                         {
                             item.icon
                         }

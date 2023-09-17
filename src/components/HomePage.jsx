@@ -51,13 +51,13 @@ export default function HomePage({ homeData = [], locale }) {
                                         <div className='z-10 flex flex-col md:flex-row items-center gap-5 mt-10'>
                                         <Link href='#'>
                                             <Button
-                                            className=" hover:bg-slate-600 text-sm hover:text-light">
+                                            className=" hover:bg-dark/60 text-sm hover:text-light">
                                                 {localizedButton}
                                             </Button>
                                         </Link>
                                         <Link href='#'>
                                             <Button
-                                            className="inline-flex items-center justify-center gap-3 text-sm hover:bg-slate-600 hover:text-light">
+                                            className="inline-flex items-center justify-center gap-3 text-sm hover:bg-dark/60 hover:text-light">
                                             <PiCalendarBlankThin size={20}  /> 
                                             {localizedBtn}
                                             </Button>

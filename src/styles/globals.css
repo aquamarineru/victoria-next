@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;900&family=Ysabeau+Office:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@400;500;700&display=swap');
 @import "~slick-carousel/slick/slick.css"; 
 @import "~slick-carousel/slick/slick-theme.css";
 
@@ -11,6 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
   }
   body {
     display: flex;
@@ -50,6 +51,7 @@
   .block-content {
     display: flex;
     flex-direction: column;
+    text-align: center;
     padding: 0 1rem;
     gap: 1rem;
     padding: 1rem 0;
@@ -63,28 +65,30 @@
     margin: 0 auto;
   }
   .block-content h1 {
-    font-family: "Raleway", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: rem;
+    text-align: center;
+    
     font-weight: 900;
     color: #090909;
     text-align: center;
   }
   .block-content h2 {
-    font-family: "Raleway", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     font-weight: 900;
     color: #090909;
     text-align: center;
   }
   .block-content h3 {
-    font-family: "Raleway", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.25rem;
     font-weight: 900;
     color: #090909;
     text-align: center;
   }
   .block-content p {
-    font-family: "Ysabeau Office", sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 500;
     color: #090909;
@@ -95,7 +99,7 @@
     line-height: 1.5rem;
   }
   .block-content a {
-    font-family: "Ysabeau Office", sans-serif;
+    font-family: 'Inter', sans-serif;
     color: #090909;
     cursor: pointer;
     text-decoration-line: underline;
@@ -104,7 +108,7 @@
     color: blue;
   }
   .block-content ol {
-    font-family: "Ysabeau Office", sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 500;
     color: #090909;
@@ -112,7 +116,7 @@
     list-style-type: decimal;
   }
   .block-content ul {
-    font-family: "Ysabeau Office", sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 500;
     color: #090909;
@@ -126,7 +130,7 @@
         color: #090909;
     }
  .block-content blockquote {
-        font-family: "Ysabeau Office", sans-serif;
+  font-family: 'Inter', sans-serif;
         font-size: 1rem;
         font-weight: 500;
         color: #090909;
@@ -135,7 +139,7 @@
         padding-left: 1rem;
     }
     .block-content blockquote p {
-        font-family: "Ysabeau Office", sans-serif;
+      font-family: 'Inter', sans-serif;
         font-size: 1rem;
         font-weight: 500;
         color: #090909;
@@ -161,7 +165,7 @@
     
   }
   .about-content ol {
-    font-family: "Ysabeau Office", sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 500;
     color: #090909;
@@ -169,7 +173,7 @@
     list-style-type: decimal;
   }
   .about-content ul {
-    font-family: "Ysabeau Office", sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 500;
     color: #090909;

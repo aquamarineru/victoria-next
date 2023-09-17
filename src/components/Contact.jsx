@@ -15,6 +15,7 @@ export default function Contact({ contactData, locale }) {
             const localizedBtn = contactItem.button?.find(item => item._key === locale)?.value;
             return(    
                 <div
+                    id="contact"
                     key={contactItem._id}
                     style={{ backgroundColor: contactItem.bg.hex }}
                     className='h-full py-10 w-full bg-center bg-no-repeat opacity-75 bg-zinc-300 bg-cover'>
@@ -66,8 +67,8 @@ export default function Contact({ contactData, locale }) {
                                 </div>
                                 <Button
                                 type="submit"
-                                style={{ backgroundColor: contactItem.bg.hex, color: "#090909" }}
-                                className="mt-24">
+                                className="mt-24 inline-flex items-center justify-center gap-3 text-sm hover:bg-dark/70 hover:text-light"
+                                >
                                     {localizedBtn}
                                 </Button>
 

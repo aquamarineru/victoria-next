@@ -21,8 +21,8 @@ export default function AboutPage({ aboutData, locale, }) {
                 <div className="pt-24 md:pt-36 h-full text-center" key={aboutItem._id} style={{ backgroundColor: aboutItem.bg.hex }} >
                     <Container>
                         <Breadcrumb paths={paths} />
-                        <Link href='/'>
-                            <button className="flex items-center gap-3 before-element">
+                        <Link href='/' >
+                            <button className="flex items-center gap-3 before-element pt-10">
                                 <PiArrowLeftLight className="transition-all duration-400 ease-in-out hover:transform hover:translate-x-1 cursor-pointer" />
                                 Back
                             </button>
