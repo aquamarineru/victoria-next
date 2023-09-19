@@ -14,7 +14,7 @@ export default function Service({ title, image, slug, description, button,  loca
             <Link 
             href={`/services/${encodeURIComponent(slug.current || slug)}`}
             >
-                <div className="flex flex-col items-center justify-center gap-4 w-[350px] ">
+                <div className="flex flex-col items-center justify-center gap-4 px-4">
                     <Image 
                     src={urlFor(image).crop('center').fit('crop').width(800).height(800).url()}
                     alt={title && title[0].value}

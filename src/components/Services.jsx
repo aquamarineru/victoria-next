@@ -21,10 +21,10 @@ export default function Services({ servicesData, locale }) {
                     </div>
                 
                 <div 
-                className="flex flex-col md:flex-row md:justify-between md:space-x-6">
+                className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {serviceGroup.allServices.map(service => {
                     return(
-                    <div key={service._id} className="flex-grow py-10  ">
+                    <div key={service._id} className="py-10  ">
                     <Service 
                     title={service.title} 
                     image={service.image}

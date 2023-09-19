@@ -86,6 +86,7 @@ export default function AboutPage({ aboutData, locale, }) {
 
 export async function getStaticProps({ locale }) {  
     const aboutQuery = `*[_type == "about"]{
+        _id,
         title,
         description,
         myImage,

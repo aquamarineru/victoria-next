@@ -52,6 +52,7 @@ export default function Navbar({menuData = [], locale}){
                         <div className={`${isMenuOpen ? 'transform translate-x-0' : 'hidden'} md:flex h-screen md:h-10 transition-transform duration-300 pt-24 md:pt-0 flex flex-col md:flex-row gap-5 items-center font-title`}>
                         {links.map(({ path, key }, index) => (
                                     <Link href={path} key={index}
+                                    onClick={() => setIsMenuOpen(false)}
                                         className='text-dark before-element font-plex uppercase cursor-pointer transition-colors '>
                                             {key}
                                     
@@ -68,7 +69,10 @@ export default function Navbar({menuData = [], locale}){
                                     key={localeIndex}
                                     href={{ pathname, query }}
                                     locale={locale}
-                                    onClick={() => document.cookie = `NEXT_LOCALE=${locale}`}
+                                    onClick={() => {
+                                        document.cookie = `NEXT_LOCALE=${locale}`;
+                                        setIsMenuOpen(false);
+                                    }}
                                     className="active:bg-dark/60 cursor-pointer px-4 py-2 rounded-xl text-dark uppercase text-sm transition-colors"
                                 >
                                     {locale}
