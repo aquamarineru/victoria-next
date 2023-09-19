@@ -76,6 +76,7 @@ export async function getStaticProps({ locale }) {
         image,
         button,
         slug,
+        body,
       },
     }`
 

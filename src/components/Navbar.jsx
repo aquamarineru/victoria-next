@@ -21,7 +21,7 @@ export default function Navbar({menuData = [], locale}){
     }; 
     const links = [
         { key: 'about', path: '/about' },
-        { key: 'services', path: '/services' },
+        { key: 'services', path: '/#services' },
         { key: 'blog', path: '/blog' },
         { key: 'contact', path: '/#contact' }
     ];

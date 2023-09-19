@@ -10,6 +10,7 @@ export default function Services({ servicesData, locale }) {
             {servicesData.map(serviceGroup => {
                 return(
                 <div 
+                id='services'
                 key={serviceGroup._id}
                 className="w-full bg-center bg-no-repeat bg-zinc-300 bg-cover py-10"
                 style={{ backgroundColor: serviceGroup.bg.hex, opacity: .8 }}>
@@ -31,7 +32,6 @@ export default function Services({ servicesData, locale }) {
                     description={service.description}
                     button={service.button}
                     locale={locale}
-                    className=""
                     />
                     </div>
                     )})}
