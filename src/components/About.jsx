@@ -6,8 +6,6 @@ import Link from "next/link";
 import Button from "./Button";
 
 export default function About({ aboutData, locale }) {
-    console.log(aboutData)
-    console.log("Received locale:", locale);
 
     return(
         <div id="about" className="w-full h-full">

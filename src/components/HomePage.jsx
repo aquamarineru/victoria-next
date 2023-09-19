@@ -37,7 +37,7 @@ export default function HomePage({ homeData = [], locale }) {
                             const localizedButton = homeItem.callToAction?.find(item => item._key === locale)?.value;
                             const localizedBtn = homeItem.button?.find(item => item._key === locale)?.value;
                                 return (
-                                    <>
+                                    <React.Fragment key={homeItem._id}>
                                     <div 
                                     style={{backgroundColor: homeItem.bg.hex, opacity: 0.8}}
                                     className='flex flex-col justify-between items-center gap-5 text-center text-dark z-10 px-4 py-6 md:px-10 md:py-16 rounded-md lg:w-[700px]' 
@@ -69,7 +69,7 @@ export default function HomePage({ homeData = [], locale }) {
 
                                     
                                     
-                                    </>
+                                    </React.Fragment>
                                     
 
                                 )

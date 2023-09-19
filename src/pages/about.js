@@ -10,7 +10,6 @@ import Link from "next/link"
 import { PiArrowLeftLight} from 'react-icons/pi'
 
 export default function AboutPage({ aboutData, locale, }) {
-    console.log(aboutData)
     const paths = ['About']
     return (
         <div className="">

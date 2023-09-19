@@ -6,7 +6,6 @@ import Button from "./Button";
 import { PiArrowRight } from "react-icons/pi";
 
 export default function Post({ title, image, slug, description, tags, locale }) {
-console.log(tags)
     const localizedTitle = title.find(item => item._key === locale).value;
     const localizedDescription = description.find(item => item._key === locale).value;
 
@@ -31,7 +30,6 @@ console.log(tags)
             className="mb-7 text-center">{localizedTitle}</Title>
             <ul>
                 {tags && tags.map((tagRef) => (
-                    console.log(tagRef),
                     <li
                     className="inline-block bg-slate-200 text-slate-800 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2 uppercase"
                     key={tagRef._ref}>
