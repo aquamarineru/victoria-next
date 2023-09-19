@@ -17,7 +17,7 @@ export default function MyService({ service, locale }) {
         <>
         <Head></Head>
         <Breadcrumb paths={paths}/>
-            <Container className='py-10'>
+            <Container className=''>
             <Article backUrl='/'>
                 <Image 
                 src={urlFor(service.image).url()}
