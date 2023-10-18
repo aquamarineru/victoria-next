@@ -2,7 +2,7 @@ import { client } from "../../lib/client";
 import Contact from '../components/Contact'
 //import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import HomePage from "@/components/HomePage";
+import { HomePage} from "@/components";
 import About from "@/components/About";
 import Section from "@/components/Section";
 import BuyMeCoffee from "@/components/BuyMeCoffee";
@@ -11,18 +11,16 @@ import Services from "@/components/Services";
 
 
 export default function Home({  contactData, locale, homeData, aboutData, servicesData }) {
-  console.log(servicesData)
+  console.log(homeData)
   return (
 
     <div>
-      <Section>
         <HomePage homeData={homeData} locale={locale} />
-
-      </Section>
         <About aboutData={aboutData} locale={locale} />
         <Services servicesData={servicesData} locale={locale}  />
-        <Contact contactData={contactData} locale={locale} />
-
+       {/*  <About aboutData={aboutData} locale={locale} />
+        <Services servicesData={servicesData} locale={locale}  />
+        <Contact contactData={contactData} locale={locale} /> */}
     </div>
   )
 }
@@ -42,9 +40,9 @@ export async function getStaticProps({ locale }) {
     }`
     const homeQuery = `*[_type == "home"]{
       _id,
+      seoImage,
       seoTitle,
       seoDescription,
-      seoImage,
       title,
       subtitle,
       bg,

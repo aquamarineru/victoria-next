@@ -1,23 +1,28 @@
 import ScreenEgg from './ScreenEgg';
 import Link from 'next/link';
+import Image from 'next/image';
 import Button from './Button';
 import { GiCoffeeCup } from 'react-icons/gi';
 export default function BuyMeCoffee() {
     return (
         <ScreenEgg type="right">
-            Copy code
-            <div className='pt-26 flex flex-col items-center gap-6 px-5 z-10'>
-                <GiCoffeeCup size={40} className='text-light transition-transform hover:opacity-60' />
-
+            <div className='pt-26 flex flex-col items-center gap-2 px-5 z-10'>
+                <Image
+                src='/coffee.png'
+                alt='coffee'
+                width={50}
+                height={60}
+                />
                 <Link 
                     href="#"
                     target='_blank'
-                    className=''
-                    rel='noopener' 
-                    style={{minWidth: '48px', minHeight: '48px'}}  // Ensure a minimum touch target size
+                    rel='noopener noreferrer'
+                    style={{minWidth: '48px', minHeight: '48px'}}  
                 >
-                    <Button className="inline-flex items-center bg-light justify-center text-sm hover:bg-dark/50 hover:text-light py-2 px-4">  {/* Added some padding for clearer touch area */}
-                        Buy me <br /> a coffee
+                    <Button
+                    aria-label='Buy me a coffee' 
+                    className="flex bg-glass items-center bg-yellow-600 text-light justify-center text-sm hover:bg-yellow-800 border-light transition-colors py-2 px-4">  
+                        Buy me a coffee...
                     </Button>
                 </Link>
             </div>

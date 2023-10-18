@@ -40,11 +40,13 @@ export default function Social() {
             {socialItems.map((item) => (
                 <li 
                 key={item.id} 
-                className='mb-3 text-light  hover:text-hover'>
+                className='mb-3'>
                     <Link 
                     href={item.href}
                     target= '_blank'
-                    className='transition-transform text-light hover:opacity-60 '>
+                    passHref 
+                    rel='noopener noreferrer'
+                    className='transition-transform text-dark hover:text-basic/70'>
                         {
                             item.icon
                         }
