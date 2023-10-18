@@ -18,7 +18,7 @@ export default function Services({ servicesData, locale }) {
                         className="w-full bg-center bg-no-repeat bg-gradient-to-t from-light via-basic/20 to-basic/40  bg-cover py-10">
                             <Container>
                                 <div 
-                                className="flex flex-col items-center justify-between gap-5 pb-5">
+                                className="flex flex-col items-center justify-between gap-5 pb-5 md:px-5">
                                     <Title 
                                     type='medium'>
                                         {localizedTitle}

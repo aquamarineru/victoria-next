@@ -32,18 +32,18 @@ export default function HomePage({ homeData, locale }) {
                         key={homeItem._id}
                         className='absolute  top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-light via-basic/20 to-basic/40 flex items-center justify-between z-0'>
                             <Container className='flex flex-col-reverse justify-between gap-10 md:flex-row' >
-                                <div className='flex flex-col items-start justify-around gap-5 z-10 md:w-1/2 '>
-                                <Title> 
-                                        {localizedTitle}
-                                </Title>
-                                <BlockContent 
-                                blocks={homeItem.subtitle[locale] }
-                                className=''
-                                />
-                                <Button
-                                aria-label="contact me">
-                                    {localizedButton}
-                                </Button>
+                                <div className='flex flex-col items-start justify-around gap-5 z-10 pl-3 md:w-1/2 pt-44 md:pt-24 md:px-5 '>
+                                    <Title> 
+                                            {localizedTitle}
+                                    </Title>
+                                    <BlockContent 
+                                    blocks={homeItem.subtitle[locale] }
+                                    className=''
+                                    />
+                                    <Button
+                                    aria-label="contact me">
+                                        {localizedButton}
+                                    </Button>
 
                                 </div>
                                 <Image

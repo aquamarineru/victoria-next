@@ -32,7 +32,7 @@ export default function About({ aboutData, locale }) {
                         <div 
                         key={aboutItem._id}  
                         /* style={{ backgroundColor: aboutItem.bg.hex, opacity: .8, zIndex: -1 }} */
-                        className="w-full bg-center bg-cover bg-no-repeat bg-basic/40 -z-10">
+                        className="px-3 md:px-5 bg-center bg-cover bg-no-repeat bg-basic/40 -z-10">
                             <Container className= "flex items-center flex-col gap-5 py-16 text-dark">
                                 <Title type='medium'>{localizedTitle}</Title>
                                 <div className="flex flex-col md:flex-row items-center justify-around gap-10 pt-5">
