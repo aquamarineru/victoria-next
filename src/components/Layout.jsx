@@ -1,11 +1,14 @@
 import Footer from './Footer';
-import Navbar from './Navbar';
 import Social from './Social';
+import Head from "next/head";
 import BuyMeCoffee from './BuyMeCoffee';
 
 export default function Layout({ children  }) {
     return (
         <div className="flex flex-col min-h-screen">
+            <Head>
+                
+            </Head>
             <main role="main" className="flex-grow">
                 {children}
                 <Social />

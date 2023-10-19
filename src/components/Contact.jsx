@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react"
 import { Container, Button, Title } from "."
 import Image from "next/image"
 import emailjs from 'emailjs-com';
-import Link from "next/link"
 import { urlFor } from "../../lib/client"
 import BlockContent from '@sanity/block-content-to-react';
 
@@ -22,7 +21,7 @@ const serializers = {
     }
 }
 
-export default function Contact({ contactData, locale }) {
+export default function Contact({ contactData, locale, contactSlugData }) {
     const [popup, setPopup] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
 

@@ -2,10 +2,23 @@ import Image from "next/image";
 import Link from "next/link";
 import {Button, Title} from ".";
 import { urlFor } from "../../lib/client";
+import BlockContent from '@sanity/block-content-to-react';
 
+const serializers = {
+    types: {
+        block: (props) => {
+            switch (props.node.style) {
+                case 'paragraph':
+                    return <p className="text-sm text-dark md:text-base font-title py-4">{props.children}</p>;
+                default:
+                    return <p className="text-sm text-dark md:text-base font-title py-4">{props.children}</p>;
+            }
+        }
+    }
+}
 export default function Service({ title, image, slug, description, button,  locale}) {
     const localizedTitle = title?.find(item => item._key === locale)?.value;
-    const localizedDescription = description.find(item => item._key === locale)?.value;
+    
     const localizedButton = button?.find(item => item._key === locale)?.value;
 
     return (
@@ -21,7 +34,10 @@ export default function Service({ title, image, slug, description, button,  loca
                     height={300}
                     className='object-cover h-full z-10 rounded-md shadow-custom opacity-50 transition-opacity duration-500 hover:opacity-100'  />
                     <Title type='small'>{localizedTitle}</Title>
-                    <p className="text-base text-center font-text">{localizedDescription}</p>
+                    <BlockContent
+                    blocks={description[locale]}
+                    serializers={serializers}
+                    />
                     <Button
                     aria-label="read more" 
                     >{localizedButton}</Button>
