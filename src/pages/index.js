@@ -11,13 +11,13 @@ import Services from "@/components/Services";
 
 
 export default function Home({  contactData, locale, homeData, aboutData, servicesData }) {
-  console.log(homeData)
   return (
 
     <div>
         <HomePage homeData={homeData} locale={locale} />
         <About aboutData={aboutData} locale={locale} />
         <Services servicesData={servicesData} locale={locale}  />
+        <Contact contactData={contactData} locale={locale} />
        {/*  <About aboutData={aboutData} locale={locale} />
         <Services servicesData={servicesData} locale={locale}  />
         <Contact contactData={contactData} locale={locale} /> */}

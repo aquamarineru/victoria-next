@@ -12,7 +12,6 @@ export default function MyService({ service, locale }) {
     const localizedTitle = service.title.find(t => t._key === locale);
     const paths = [ localizedTitle && localizedTitle.value || '' ]
 
-    console.log(service)
     return (
         <>
         <Head></Head>
