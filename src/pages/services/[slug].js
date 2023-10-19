@@ -17,7 +17,6 @@ function blockToPlainText(blockContent) {
         return '';
     }
 
-    // Traverse the block content and extract text from the 'children' array
     return blockContent
         .map(block => {
             if (block._type === 'block') {
@@ -32,7 +31,6 @@ function blockToPlainText(blockContent) {
 
 
 export default function MyService({ service, locale, contactData }) {
-    console.log(service)
     const seoImageUrl = service.seoImage && urlFor(service.seoImage.asset).url();
     const localizedSeoDescription = service.seoDescription && service.seoDescription[locale]
         ? blockToPlainText(service.seoDescription[locale])

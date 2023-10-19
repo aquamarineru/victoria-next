@@ -13,18 +13,19 @@ export default function BuyMeCoffee() {
                 width={50}
                 height={60}
                 />
-                <Link 
+                <Button
+                aria-label='Buy me a coffee' 
+                className="flex bg-glass items-center bg-basic/60 text-light justify-center text-sm hover:bg-basic border-basic/30 transition-colors">  
+                    <a 
                     href="#"
                     target='_blank'
                     rel='noopener noreferrer'
-                    style={{minWidth: '48px', minHeight: '48px'}}  
-                >
-                    <Button
-                    aria-label='Buy me a coffee' 
-                    className="flex bg-glass items-center bg-yellow-600 text-light justify-center text-sm hover:bg-yellow-800 border-light transition-colors py-2 px-4">  
-                        Buy me a coffee...
+                    style={{minWidth: '40px', minHeight: '20px'}}  
+                    >
+                        Buy me a coffee...   
+                    </a>
                     </Button>
-                </Link>
+               
             </div>
         </ScreenEgg>
     )
