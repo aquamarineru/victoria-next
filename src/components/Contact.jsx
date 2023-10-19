@@ -13,7 +13,7 @@ const serializers = {
                 case 'paragraph':
                     return <p className="text-sm text-dark md:text-base font-title py-4">{props.children}</p>;
                 case 'bullet':
-                    return <ul className="text-light list-disc pl-6 mb-4 font-light text-sm md:text-base"><li className="mb-2">{props.children}</li></ul>;
+                    return <ul className="text-dark list-disc pl-6 mb-4 font-light text-sm md:text-base"><li className="mb-2">{props.children}</li></ul>;
                 default:
                     return <p className="text-sm text-dark md:text-base font-title py-4">{props.children}</p>;
             }

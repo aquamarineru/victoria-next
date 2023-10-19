@@ -22,17 +22,17 @@ const serializers = {
         block: (props) => {
             switch (props.node.style) {
                 case 'h2':
-                    return <h2 className=" text-xl md:text-3xl font-semibold font-h1 mb-5 text-center text-light/80">{props.children}</h2>;
+                    return <h2 className=" text-xl md:text-3xl font-semibold font-h1 mb-5 text-center text-dark/80">{props.children}</h2>;
                 case 'h3':
-                    return <h3 className="text-light text-2xl font-medium mb-4">{props.children}</h3>;
+                    return <h3 className="text-dark text-2xl font-medium mb-4">{props.children}</h3>;
                 case 'paragraph':
-                    return <p className="text-sm text-light md:text-base font-light mb-4">{props.children}</p>;
+                    return <p className="text-sm text-dark md:text-base font-light mb-4">{props.children}</p>;
                 case 'bullet':
-                    return <ul className="text-light list-disc pl-6 mb-4 font-light text-sm md:text-base"><li className="mb-2">{props.children}</li></ul>;
+                    return <ul className="text-dark list-disc pl-6 mb-4 font-light text-sm md:text-base"><li className="mb-2">{props.children}</li></ul>;
                 case 'number':
-                    return <o className="text-light list-decimal pl-6 mb-4 font-light"><li className="mb-2">{props.children}</li></o>;
+                    return <ol className="text-dark list-decimal pl-6 mb-4 font-light"><li className="mb-2">{props.children}</li></ol>;
                 default:
-                    return <p className="text-light text-sm md:text-base font-light mb-4">{props.children}</p>;
+                    return <p className="text-dark text-sm md:text-base font-light mb-4">{props.children}</p>;
             }
         },
         listItem: (props) => <li className="mb-2">{props.children}</li>,
