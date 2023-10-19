@@ -39,7 +39,7 @@ export default function AboutPage({ aboutEntry, locale, }) {
     const localizedSeoDescription = aboutEntry.seoDescription && aboutEntry.seoDescription[locale]
         ? blockToPlainText(aboutEntry.seoDescription[locale])
         : null;
-        const localizedBackButton = aboutEntry?.backButton?.find(t => t._key === locale)?.value || 'Back';
+    const localizedBackButton = aboutEntry?.backButton?.find(t => t._key === locale)?.value || 'Back';
     const localizedTitle = aboutEntry.title?.find(item => item._key === locale)?.value;
     const paths = [ aboutEntry.seoTitle ];
     

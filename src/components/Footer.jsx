@@ -10,9 +10,9 @@ function Footer(){
         <div className="bg-light/90 text-dark text-center py-4 border-t border-basic/40 backdrop-blur-[10px]">
             <Container>
                 <nav
-                className='text-light mx-auto max-w-7xl px-8 flex flex-row items-center justify-between py-5 relative'>
+                className='text-light mx-auto max-w-7xl px-8 flex flex-col md:flex-row items-center justify-between py-5 relative'>
                     <div
-                    className='font-title text-xl font-bold text-dark flex items-center gap-2 cursor-pointer hover:text-basic/50 transition-colors'
+                    className='font-title text-base md:text-xl font-bold text-dark flex items-center gap-2 cursor-pointer hover:text-basic/50 transition-colors'
                     >
                         <Image 
                         src='/logo.png'

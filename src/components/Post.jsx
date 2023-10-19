@@ -5,13 +5,15 @@ import { urlFor } from "../../lib/client";
 import Button from "./Button";
 import { PiArrowRight } from "react-icons/pi";
 
-export default function Post({ title, image, slug, description, tags, locale }) {
+export default function Post({ title, image, slug, description, tags, locale, button }) {
     const localizedTitle = title.find(item => item._key === locale).value;
     const localizedDescription = description.find(item => item._key === locale).value;
+    const localizedButton = button.find(item => item._key === locale).value;
 
     return(
-        <Link href={`/blog/${encodeURIComponent(slug.current)}`} 
-        className="text-dark border-hover bg-slate-100 p-4 rounded-md">
+        <Link 
+        href={`/blog/${encodeURIComponent(slug.current)}`} 
+        className="text-dark border-basic  p-4 rounded-md">
             <div className=" flex flex-col gap-3 relative">
                 <div className="hidden md:block">
                     {image && (
@@ -28,22 +30,22 @@ export default function Post({ title, image, slug, description, tags, locale }) 
             
             <Title type='small'
             className="mb-7 text-center">{localizedTitle}</Title>
-            <ul>
+            <div>
                 {tags && tags.map((tagRef) => (
-                    <li
-                    className="inline-block bg-slate-200 text-slate-800 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2 uppercase"
+                    <span
+                    className="rounded-md border-[1px] border-basic uppercase text-basic  border-opacity-20 bg-glass px-2 py-1 font-light text-sm md:text-base"
                     key={tagRef._ref}>
                         {tagRef.name}
-                    </li>
+                    </span>
                 ))}
-            </ul>
+            </div>
             <p className="leading-6">{localizedDescription}</p>
                
             <div  className="text-center relative">
               <button
               className="flex items-center justify-center gap-2 font-plex text-lg before-element"
               >
-              Read More
+              {localizedButton}
               <PiArrowRight 
               className='transition-all duration-400 ease-in-out hover:transform hover:translate-x-1 cursor-pointer' 
               />    

@@ -8,7 +8,7 @@ const NextArrow = ({ onClick }) => {
     return (
         <BsArrowRight 
         style={{ 
-          color: "#090909", 
+          color: "#342359", 
           fontSize: "25px", 
           position: "absolute",
           top: "50%",
@@ -24,7 +24,7 @@ const NextArrow = ({ onClick }) => {
     return (
         <BsArrowLeft 
         style={{ 
-          color: "#090909", 
+          color: "#342359", 
           fontSize: "25px", 
           position: "absolute",
           top: "50%",
@@ -98,7 +98,7 @@ export default function RelatedPosts({ post, relatedPosts, locale }) {
                 <li key={relatedPost.slug.current} className=''>
                   <Link 
                     href={`/blog/${relatedPost.slug.current}`}
-                    className="text-dark border-hover bg-slate-100 p-4 rounded-md flex flex-col items-center"
+                    className="text-dark font-thin border-hover  p-4 rounded-md flex flex-col items-center"
                   >
                     {relatedPost.image && (
                       <div className="block">
