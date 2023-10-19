@@ -42,7 +42,10 @@ export default function HomePage({ homeData, locale }) {
                                     />
                                     <Button
                                     aria-label="contact me">
+                                        <a href="mailto:jukouska@gmail.com">
                                         {localizedButton}
+                                        </a>
+                                        
                                     </Button>
 
                                 </div>
