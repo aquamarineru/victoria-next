@@ -33,6 +33,9 @@ export default function Layout({ children }) {
             <meta charSet="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <title>EmpowerHer | Educational writer and editor </title>
+            <meta name="title" content="EmpowerHer | Educational writer and editor" />
+            <meta name="og:description" content="Welcome! I provide writing and editing services to people working in all sectors of education, and academic writing coaching to students and early career researchers." />
+            <meta name="description" content="Welcome! I provide writing and editing services to people working in all sectors of education, and academic writing coaching to students and early career researchers." />
             <meta property="og:type" content="website" />
         </Head>
             <main role="main" className="flex-grow">
