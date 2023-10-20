@@ -82,7 +82,8 @@ export async function getStaticProps({ locale }) {
         servicesData,
         locale: locale,
         ...(await serverSideTranslations(locale, ['common'])),
-      }
+      },
+      revalidate: 60, 
     }
   }catch (error) {
     console.log(error)

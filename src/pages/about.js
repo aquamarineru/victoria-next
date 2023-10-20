@@ -129,6 +129,7 @@ export async function getStaticProps({ locale }) {
             aboutEntry,
             locale,
         },
+        revalidate: 60, 
     };
 }
 
