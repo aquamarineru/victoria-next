@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://victoria-next.vercel.app/api/sitemap.xml

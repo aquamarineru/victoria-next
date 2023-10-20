@@ -1,4 +1,4 @@
-import { client } from "../../lib/client";
+import { client, urlFor } from "../../lib/client";
 import Contact from '../components/Contact'
 //import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -8,19 +8,21 @@ import Section from "@/components/Section";
 import BuyMeCoffee from "@/components/BuyMeCoffee";
 import Social from "@/components/Social";
 import Services from "@/components/Services";
+import Head from 'next/head'
+
 
 
 export default function Home({  contactData, locale, homeData, aboutData, servicesData }) {
+  
+
   return (
 
     <div>
+      
         <HomePage homeData={homeData} locale={locale} />
         <About aboutData={aboutData} locale={locale} />
         <Services servicesData={servicesData} locale={locale}  />
         <Contact contactData={contactData} locale={locale} />
-       {/*  <About aboutData={aboutData} locale={locale} />
-        <Services servicesData={servicesData} locale={locale}  />
-        <Contact contactData={contactData} locale={locale} /> */}
     </div>
   )
 }
