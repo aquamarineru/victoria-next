@@ -42,13 +42,8 @@ export async function getStaticProps({ locale }) {
     }`
     const homeQuery = `*[_type == "home"]{
       _id,
-      seoImage,
-      seoTitle,
-      seoDescription,
       title,
       subtitle,
-      bg,
-      button,
       bgImage,
       callToAction,
     }`
