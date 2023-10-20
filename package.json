@@ -12,6 +12,7 @@
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^6.4.9",
     "@sanity/image-url": "^1.0.2",
+    "@vercel/analytics": "^1.1.1",
     "autoprefixer": "10.4.15",
     "cookies": "^0.8.0",
     "date-fns": "^2.30.0",
