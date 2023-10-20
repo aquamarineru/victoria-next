@@ -13,7 +13,7 @@ export default function Document() {
           gtag('js', new Date());
             
           gtag('config', 'G-[tracking-id]');
-          `} {/* Global Site Tag (gtag.js) - Google Analytics здесь нужно добавть id вот так G-1234567890*/}Н
+          `} {/* Global Site Tag (gtag.js) - Google Analytics здесь нужно добавть id вот так G-1234567890*/}
         </Script>
       </Head>
       <body>
