@@ -27,9 +27,7 @@ const serializers = {
     },
   };
 
-export default function Publication({ key, title, description, link, image, year, author, button, locale }) {
-    console.log(year)
-    const localizedYear = year?.find(item => item._key === locale)?.value;
+export default function Publication({ key, title, description, link, image, author, button, locale }) {
     const localizedButton = button?.find(item => item._key === locale)?.value;
     const localizedAuthor = author?.find(item => item._key === locale)?.value;
 
@@ -70,31 +68,6 @@ export default function Publication({ key, title, description, link, image, year
             </li>
 
                         </ul>
-                        {/* <ul className="flex items-center flex-col">
-                            {aboutEntry.publications && aboutEntry.publications.map((publication) => (
-                                <li
-                                    key={publication._id}
-                                    className="mb-4 flex flex-col gap-5 md:flex-row items-center justify-center">
-                                    {publication.image &&
-                                        <div className="mt-3 hidden md:block">
-                                            <Image
-                                                src={urlFor(publication.image).crop('center').fit('crop').width(1000).height(1080).url()}
-                                                alt={publication.title || "Publication Image"}
-                                                width={200}
-                                                height={200}
-                                                className='mt-5 md:mt-12 object-cover rounded shadow-custom z-10'
-                                            />
-                                        </div>
-                                    }
-                                    <div className=" px-4 w-[300px] md:w-[500px] ">
-                                        <h3 className="text-xl font-bold">{publication.title}</h3>
-                                        <p className="mt-1">Year: {publication.year}</p>
-                                        {publication.author && <p>Author: {publication.author}</p>}
-                                        <Link href={publication.link} target="_blank" rel="noreferrer" className="text-blue-500 mt-3 inline-block">Read More</Link>
-                                    </div>
-                                </li>
-                            ))}
-                        </ul> */}
                     </div>
     )
 }

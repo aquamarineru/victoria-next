@@ -85,7 +85,6 @@ export default function AboutPage({ aboutEntry, locale, }) {
                                 description={publication.description}
                                 link={publication.link}
                                 image={publication.image}
-                                year={publication.year[locale]}
                                 author={publication.author}
                                 button={publication.button}
                                 locale={locale}
@@ -117,7 +116,6 @@ export async function getStaticProps({ locale }) {
             description,
             link,
             image,
-            year,
             author,
             button
         }
